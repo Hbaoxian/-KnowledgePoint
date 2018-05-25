@@ -1,1 +1,34 @@
 初识
+
+
+1 usr 系统文件  系统更新的时候会发生变化
+  操作命令 /usr/bin
+
+
+
+2 	cycript 调试工具
+	export CY=/Users/huangbaoxian/Documents/cycript_0.9.594/
+	export PATH=$PATH:$M2_HOME/bin:$PATH:$CY
+
+
+3	shell 脚本执行方式
+
+	1 sh
+	2 bash
+	3 source 如果脚本里面涉及切换目录
+
+4 安装monkeydel
+	指定xocde
+	sudo xcode-select -s /Applications/Xcode.app
+
+	不指定xocde
+	xcode-select -p
+
+
+	git clone https://github.com/AloneMonkey/MonkeyDev.git
+	cd MonkeyDev/bin
+	sudo ./md-instal
+
+
+	存放路径
+	/opt/monkeyDev
