@@ -1,0 +1,115 @@
+ if (![WXApi isWXAppInstalled]) {
+        [EDJAlertViewManager alertWithTitle:@"错误" msg:@"请安装微信并登录您的帐号"];
+        return;
+    }
+    if (![WXApi isWXAppSupportApi]) {
+        [EDJAlertViewManager alertWithTitle:@"错误" msg:@"您的微信版本不支持开放平台,请更新您的微信版本!"];
+        return;
+    }
+    
+    NSDictionary *preOrderDict = result[@"data"];
+    NSString *noncestr = preOrderDict[@"noncestr"];
+    NSString *package = preOrderDict[@"package"];
+    NSString *prepayId = preOrderDict[@"prepayid"];
+    NSString *partnerId = preOrderDict[@"partnerid"];
+    NSString *sign = preOrderDict[@"sign"];
+    NSString *timeStamp = preOrderDict[@"timestamp"];
+    PayReq *request = [[PayReq alloc] init];
+    request.partnerId = partnerId;
+    request.prepayId = prepayId;
+    request.package = package;
+    request.nonceStr= noncestr;
+    request.timeStamp = [timeStamp intValue];
+    request.sign= sign;
+    [WXApi sendReq:request];
+
+
+
+
+    URL TYPE
+    a里
+    ali_pay
+    alipay.edaijia
+
+    微信
+    edaijia, wx739de821c251fd49
+
+
+    白名单
+    alipay
+    weixin
+
+
+    appdelegate
+
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    
+    return [WXApi handleOpenURL:url delegate:self] || [ShareSDK handleOpenURL:url wxDelegate:self];//|| [MWApi handleOpenURL:url delegate:self
+}
+
+
+
+
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    if ([url.scheme isEqualToString:@"edaijia"]) {
+        NSString *host = url.host;
+        //短信调起客户端并打开指定也卖弄
+        
+        EDJLocalOpendType code = EDJLocalOpendTypeDefault;
+        if (host.length > 0) {
+            code = host.integerValue;
+        }
+        if ([host isEqualToString:@"uppayresult"]) {
+            [[UPPaymentControl defaultControl] handlePaymentResult:url completeBlock:^(NSString *code, NSDictionary *data) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationUppayPaySuccess object:nil userInfo:@{@"result":code}];
+            }];
+            
+        }else if (code != EDJLocalOpendTypeDefault) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:kOpenTargetPageNotification object:nil userInfo:@{@"code":@(code)}];
+            
+        }
+        return YES;
+    }
+    //跳转支付宝钱包进行支付，需要将支付宝钱包的支付结果回传给SDK
+    if ([url.host isEqualToString:@"safepay"]) {
+        [[AlipaySDK defaultService]
+         processOrderWithPaymentResult:url
+         standbyCallback:^(NSDictionary *resultDic) {
+             DDLogDebug(@"result = %@", resultDic);
+             //支付宝支付成功
+             [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationAliPaySuccess object:resultDic];
+         }];
+        return YES;
+    }
+    return ([ShareSDK handleOpenURL:url sourceApplication:sourceApplication annotation:annotation wxDelegate:self]
+            || [WXApi handleOpenURL:url delegate:self]);//| [MWApi handleOpenURL:url delegate:self
+}
+
+
+
+
+
+
+
+支付宝吊起SDK
+ NSString *orderString = result[@"data"];
+            self.serialNumber = [self scanAliSerialNumberFromOrderString:orderString];
+            
+            [[AlipaySDK defaultService] payOrder:orderString
+                                      fromScheme:@"alipay.edaijia"
+                                        callback:^(NSDictionary *resultDic) {
+                                            [self onAliPaymentResult:resultDic];
+                                        }];
+
+
+
+
+
+
+
+
+
+
+

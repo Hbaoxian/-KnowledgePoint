@@ -38,11 +38,29 @@
 语言的发展
 
 
-1 机器语言  0.1
+1 机器语言  0.1(0: 没有电， 1： 有电， 高低电频)
 2 汇编语言  字母 mov av bx 
 3 高级语言  c/c++/swift
 
 汇编语言与机器语言一一对应   每条语言都有一条对应的汇编指令  (引申拿到机器语言，就能逆向编译为语言)
+
+编译器： 高级语言编译为汇编，再编译为二进制
+
+
+指令集
+
+
+armv6 设备： iPhone, iPhone2, iPhone3G, 第一代、第二代 iPod Touch
+
+armv7 设备： iPhone3GS, iPhone4, iPhone4S
+
+                      iPad, iPad2, iPad3(The New iPad), iPad mini
+
+                      iPod Touch 3G, iPod Touch4
+
+armv7s设备： iPhone5, iPhone5C, iPad4(iPad with Retina Display)
+
+arm64 设备： iPhone5S, iPad Air, iPad mini2(iPad mini with Retina Display)  iphone5s以后机器
 
 
 

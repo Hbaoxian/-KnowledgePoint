@@ -1,0 +1,40 @@
+jenkens自动化打包过程
+
+
+1 下载mac版本Jenkins
+
+2 更新 ruby版本
+
+curl -L get.rvm.io | bash -s stable     # 安装
+
+rvm list known        # 列出已知ruby版本
+
+rvm install ruby-xxxxx     #  安装一个最新ruby版本 注：此处xxxxx为list中的最新版本号
+
+如果报错的话
+
+brew install openssl 
+
+reinstall|install ruby-xxxxx     #    注意修改xxxxxx
+
+
+
+
+
+
+
+3 安装 Fastlane
+
+	1.安装xcode-select
+	# 如果 Xcode CLT 已经安装，则会报如下错误
+	# command line tools are already installed, use "Software Update" to install updates.
+
+	2  sudo gem install fastlane --verbose	
+	#  如果报错：ERROR: While executing gem ... (Errno::EPERM) Operation not permitted - /usr/bin/commander 
+
+	sudo gem install -n /usr/local/bin fastlane 
+
+
+
+4 卸载Jenkins的命令： /Library/Application\ Support/Jenkins/Uninstall.command
+
