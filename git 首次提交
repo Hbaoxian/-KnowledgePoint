@@ -41,8 +41,14 @@ git remote -v
 【git remote add origin url】添加新远程仓库
 
 
+*********************************************************8
+git新增tag
 
+git tag -a teacher_1.0.0 -m "release version 1.0.0"
+git push origin tag teacher_v1.0.0
 
+需要确认服务器是否可以使用这个标签
+如果没有，则添加refs/tags/*
 
 
 
