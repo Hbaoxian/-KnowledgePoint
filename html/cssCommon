@@ -68,6 +68,43 @@ outset	定义 3D 凸边轮廓。此效果取决于 outline-color 值。
 inherit	规定应该从父元素继承轮廓样式的设置。
 
 
+5 文字居中  
+
+水平方向 text-align: center
+垂直方向 vertical-align：middle 
+
+对于快级元素无效，主要用于控制图片或者表单  去除图片低侧缝隙
+
+
+6 溢出文字隐藏  word-break
+
+默认：自动换行
+normal： 使用浏览器默认的换行规则。
+break-all： 允许单词内换行 ，单词拆开显示
+keep-all： 只能在半角空格或连字符处换行。不允许拆开单词
+
+
+7  white-space
+
+normal	默认。空白会被浏览器忽略。
+pre	空白会被浏览器保留。其行为方式类似 HTML 中的 <pre> 标签。
+nowrap	文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。
+pre-wrap	保留空白符序列，但是正常地进行换行。
+pre-line	合并空白符序列，但是保留换行符。
+inherit	规定应该从父元素继承 white-space 属性的值。
+
+
+8 文字溢出  text-overflow (需要overflow属性配合使用)
+
+clip	修剪文本。	测试
+ellipsis	显示省略符号来代表被修剪的文本。	测试
+string	使用给定的字符串来代表被修剪的文本。
+
+
+
+
+
+
 
 
 
