@@ -23,7 +23,7 @@ inset  可选。将外部阴影 (outset) 改为内部阴影。
 
 3 cursor  鼠标样式
 
-url	
+url
 需使用的自定义光标的 URL。
 注释：请在此列表的末端始终定义一种普通的光标，以防没有由 URL 定义的可用光标。
 default	默认光标（通常是一个箭头）
@@ -68,10 +68,10 @@ outset	定义 3D 凸边轮廓。此效果取决于 outline-color 值。
 inherit	规定应该从父元素继承轮廓样式的设置。
 
 
-5 文字居中  
+5 文字居中
 
 水平方向 text-align: center
-垂直方向 vertical-align：middle 
+垂直方向 vertical-align：middle
 
 对于快级元素无效，主要用于控制图片或者表单  去除图片低侧缝隙
 
@@ -100,6 +100,52 @@ clip	修剪文本。	测试
 ellipsis	显示省略符号来代表被修剪的文本。	测试
 string	使用给定的字符串来代表被修剪的文本。
 
+
+
+transition 属性是一个简写属性，用于设置四个过渡属性：
+transition: property duration timing-function delay;
+
+transition-property: 设置需要动画的属性，如果设置all，则全部属性都执行
+transition-duration： 设置动画的时长： 4s
+transition-timing-function：
+        linear	规定以相同速度开始至结束的过渡效果（等于 cubic-bezier(0,0,1,1)）。
+        ease	规定慢速开始，然后变快，然后慢速结束的过渡效果（cubic-bezier(0.25,0.1,0.25,1)）。
+        ease-in	规定以慢速开始的过渡效果（等于 cubic-bezier(0.42,0,1,1)）。
+        ease-out	规定以慢速结束的过渡效果（等于 cubic-bezier(0,0,0.58,1)）。
+        ease-in-out	规定以慢速开始和结束的过渡效果（等于 cubic-bezier(0.42,0,0.58,1)）。
+        cubic-bezier(n,n,n,n)	在 cubic-bezier 函数中定义自己的值。可能的值是 0 至 1 之间的数值。
+
+transition-delay: 延迟执行的时间
+
+
+
+trasform：
+使用语法： transform: none|transform-functions;
+:rotate(7deg）选择7度
+translate(-50%,-50%); 水平垂直居中
+
+none	定义不进行转换。	测试
+matrix(n,n,n,n,n,n)	定义 2D 转换，使用六个值的矩阵。	测试
+matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)	定义 3D 转换，使用 16 个值的 4x4 矩阵。
+translate(x,y)	定义 2D 转换。	测试
+translate3d(x,y,z)	定义 3D 转换。
+translateX(x)	定义转换，只是用 X 轴的值。	测试
+translateY(y)	定义转换，只是用 Y 轴的值。	测试
+translateZ(z)	定义 3D 转换，只是用 Z 轴的值。
+scale(x,y)	定义 2D 缩放转换。	测试
+scale3d(x,y,z)	定义 3D 缩放转换。
+scaleX(x)	通过设置 X 轴的值来定义缩放转换。	测试
+scaleY(y)	通过设置 Y 轴的值来定义缩放转换。	测试
+scaleZ(z)	通过设置 Z 轴的值来定义 3D 缩放转换。
+rotate(angle)	定义 2D 旋转，在参数中规定角度。	测试
+rotate3d(x,y,z,angle)	定义 3D 旋转。
+rotateX(angle)	定义沿着 X 轴的 3D 旋转。	测试
+rotateY(angle)	定义沿着 Y 轴的 3D 旋转。	测试
+rotateZ(angle)	定义沿着 Z 轴的 3D 旋转。	测试
+skew(x-angle,y-angle)	定义沿着 X 和 Y 轴的 2D 倾斜转换。	测试
+skewX(angle)	定义沿着 X 轴的 2D 倾斜转换。	测试
+skewY(angle)	定义沿着 Y 轴的 2D 倾斜转换。	测试
+perspective(n)	为 3D 转换元素定义透视视图。
 
 
 
