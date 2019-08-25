@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <style type="text/css" media="screen">
+
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 200px;
+            height: 100px;
+            /*margin: 200px auto;*/
+            position: relative;
+            animation: go 2s ease 0s 2 reverse; /*定义动画*/
+
+        }
+
+        /*单个动画*/
+        @keyframes go {
+            from {
+                transform: translateX(0)
+            }
+
+            to {
+                transform: translateX(600px)
+            }
+
+        }
+        /*多组动画*/
+
+        @keyframes  go {
+            0% {
+                transform:translate3d(0,0,0)
+            }
+
+            25% {
+                transform:translate3d(800px,0,0)
+            }
+
+            50% {
+                transform:translate3d(800px,400,0)
+            }
+
+            75% {
+                transform:translate3d(400px,400px,0)
+            }
+            0% {
+                transform:translate3d(0,0,0)
+            }
+        }
+
+
+
+        div img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: all 1s;
+        }
+
+        div img:first-child {
+            backface-visibility: hidden;
+            z-index: 1;
+
+        }
+
+        div:hover img {
+            transform: rotateY(180deg);
+        }
+
+
+    </style>
+
+
+    <title>Title</title>
+
+
+</head>
+<body>
+
+<!--图片翻转-->
+
+<div>
+    <img src="../images/WechatIMG5.jpeg">
+    <img src="../images/WechatIMG6.jpeg">
+
+</div>
+
+</body>
+</html>

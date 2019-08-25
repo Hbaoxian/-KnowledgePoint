@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <style type="text/css" media="screen">
+
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 200px;
+            height: 100px;
+            margin: 200px auto;
+           position: relative;
+
+        }
+        div img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: all 1s;
+        }
+
+        div img:first-child {
+            backface-visibility: hidden;
+            z-index: 1;
+
+        }
+
+        div:hover img {
+            transform: rotateY(180deg);
+        }
+
+
+
+    </style>
+
+
+
+
+    <title>Title</title>
+
+
+</head>
+<body>
+
+    <!--图片翻转-->
+
+    <div>
+        <img src="../images/WechatIMG5.jpeg">
+        <img src="../images/WechatIMG6.jpeg">
+
+    </div>
+
+</body>
+</html>

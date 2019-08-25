@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .backdoor {
+            width: 400px;
+            height: 150px;
+            margin: 100px auto;
+            background: black;
+            position: relative;
+            perspective:500px
+        }
+
+        .left-door, .right-door {
+            position: absolute;
+            top: 0;
+            width: 200px;
+            height: 150px;
+            transition: all 0.5s;
+
+        }
+
+        .left-door {
+            left: 0;
+            background-image: url("../images/WechatIMG4.jpeg");
+            background-repeat: no-repeat;
+            background-position: center;
+            transform-origin: left center;
+
+        }
+
+        .right-door {
+            right: 0;
+            background-image: url("../images/WechatIMG5.jpeg");
+            background-repeat: no-repeat;
+            background-position: center;
+            transform-origin: right center;
+        }
+
+        .backdoor:hover .left-door {
+            transform: rotateY(-110deg);
+        }
+
+        .backdoor:hover .right-door {
+            transform: rotateY(110deg);
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+
+
+<div class="backdoor">
+
+    <!--开门大吉-->
+    <div class="left-door"></div>
+    <div class="right-door"></div>
+</div>
+
+
+</body>
+</html>

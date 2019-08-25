@@ -101,8 +101,7 @@ ellipsis	显示省略符号来代表被修剪的文本。	测试
 string	使用给定的字符串来代表被修剪的文本。
 
 
-
-transition 属性是一个简写属性，用于设置四个过渡属性：
+9 transition 属性是一个简写属性，用于设置四个过渡属性：
 transition: property duration timing-function delay;
 
 transition-property: 设置需要动画的属性，如果设置all，则全部属性都执行
@@ -119,7 +118,7 @@ transition-delay: 延迟执行的时间
 
 
 
-trasform：
+10 trasform：
 使用语法： transform: none|transform-functions;
 :rotate(7deg）选择7度
 translate(-50%,-50%); 水平垂直居中
@@ -129,7 +128,7 @@ matrix(n,n,n,n,n,n)	定义 2D 转换，使用六个值的矩阵。	测试
 matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)	定义 3D 转换，使用 16 个值的 4x4 矩阵。
 translate(x,y)	定义 2D 转换。	测试
 translate3d(x,y,z)	定义 3D 转换。
-translateX(x)	定义转换，只是用 X 轴的值。	测试
+translateX(x)	定义转换，只是用 X 轴的值。translateX(180edg)翻转效果
 translateY(y)	定义转换，只是用 Y 轴的值。	测试
 translateZ(z)	定义 3D 转换，只是用 Z 轴的值。
 scale(x,y)	定义 2D 缩放转换。	测试
@@ -148,17 +147,91 @@ skewY(angle)	定义沿着 Y 轴的 2D 倾斜转换。	测试
 perspective(n)	为 3D 转换元素定义透视视图。
 
 
+perspective:500px 数字越大，效果越不明显，添加到父视图上，添加盒子透视效果
+perspective： 原理，近大远小，模拟眼睛到屏幕的距离
+translate3d(x,y,z) 可以是大小或者百分百
+
+translateY(-50%)走自己高度的一半，居中对齐
 
 
 
+11  滑动门技术
+
+使用两个盒子，使用同一背景，一个使用左边，一个使用右边
+
+
+12 css精灵技术
+
+把多张图片，放到一张图片的，使用背景定位功能，获取图片的背景
+
+
+13  backface-visibility
+
+反面隐藏
+比如翻转90度之后可以隐藏
+
+
+14 animation 动画
+
+animation
+animation 属性是一个简写属性，用于设置六个动画属性：
+animation-name
+animation-duration
+animation-timing-function
+animation-delay
+animation-iteration-count
+animation-direction
+
+语法
+animation: name duration timing-function delay iteration-count direction;
+
+
+timing-function：
+
+linear	动画从头到尾的速度是相同的。	测试
+ease	默认。动画以低速开始，然后加快，在结束前变慢。	测试
+ease-in	动画以低速开始。	测试
+ease-out	动画以低速结束。	测试
+ease-in-out	动画以低速开始和结束。	测试
+cubic-bezier(n,n,n,n)	在 cubic-bezier 函数中自己的值。可能的值是从 0 到 1 的数值。
+
+
+animation: go 2s ease 0s 2 reverse;  定义动画
+@keyframes  go {  //使用动画
+    from {
+          transform:translatex(0)
+    }
+
+    to {
+         transform:translatex(600px)
+    }
+}
+
+
+@keyframes  go {  //使用动画
+    0% {
+          transform:translatex3d(0,0,0)
+    }
+
+    25% {
+             transform:translatex3d(800px,0,0)
+       }
+
+    50% {
+             transform:translatex3d(800px,400,0)
+       }
+
+    75% {
+             transform:translatex3d(400px,400px,0)
+       }
+   0% {
+                transform:translatex3d(0,0,0)
+      }
+}
 
 
 
-
-
-
-
-
+15 伸缩布局
 
 
 

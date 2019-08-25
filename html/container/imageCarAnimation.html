@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        div {
+            width: 200px;
+            height: 150px;
+            background-image: url("../images/car.jpeg");
+            background-repeat: no-repeat;
+            background-size: 60% 60%;
+            background-position: center;
+            animation:  car 2s;
+        }
+
+
+        @keyframes  car {
+            0% {
+                transform:translate3d(0,0,0)
+            }
+
+            50% {
+                transform:translate3d(800px,0,0)
+            }
+
+            51% {
+                transform:translate3d(800px,0,0)  rotateY(180deg);
+            }
+
+            100% {
+                transform:translate3d(0,0,0) rotateY(180deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div>
+
+
+    </div>
+
+
+</body>
+</html>
