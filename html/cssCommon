@@ -233,6 +233,39 @@ animation: go 2s ease 0s 2 reverse;  定义动画
 
 15 伸缩布局
 
+百分比布局
+百分比跟margin容易冲突，因为margin会影响盒子大小
+flex布局中margin不冲突
+flex布局属性
+
+
+16 BFC
+一个封闭区域盒子，不影响盒子外面的布局
+block listItem table具有BFC的条件
+触发条件： 1 float属性不为none
+          2 positive：absolute或者filed
+          3 overflow: 不为visiable
+          4 display： 为inline-block
+
+BFC元素具有的特性：
+1 内部盒子垂直方向一个个排列
+2 外边距会合并： 找2个盒子见最大的  ，垂直方向通过margin控制间隙
+3 盒子中内部元素左外边缘会与盒子的边框对齐
+4
+5 计算BFC的高度，自动检测浮动盒子高度
+
+BFC使用场景：
+
+1 闭合浮动，清除浮动 通过设置属性： overflow: 不为visiable
+2 解决内外边距合并： 2个盒子不同属一个BFC的区域，外边距不会合并
+3 右侧自适应
+
+
+
+
+
+
+
 
 
 
