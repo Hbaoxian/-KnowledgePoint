@@ -258,12 +258,49 @@ BFC使用场景：
 
 1 闭合浮动，清除浮动 通过设置属性： overflow: 不为visiable
 2 解决内外边距合并： 2个盒子不同属一个BFC的区域，外边距不会合并
-3 右侧自适应
+3 右侧自适应,BFC盒子不会被浮动影响
 
 
 
+16 渐进增强和优雅降级
+
+渐进增强： 针对低版本浏览器优化，向上兼容
+优雅降级： 向下兼容，先保证高版本浏览器，然后保证低版本
+
+17 浏览器前缀
+
+-ms- 兼容IE浏览器
+-moz- 兼容firefox
+-o- 兼容opera
+-webkit- 兼容chrome 和 safari
 
 
+18 背景渐变
+
+渐变：兼容性问题很多，必须加上前缀兼容
+1  background: linear-gradient(渐变其实位置，渐变开始颜色，渐变结束颜色)
+在浏览器中打开需要兼容，添加浏览器前缀
+2  background: linear-gradient(渐变其实位置，渐变开始颜色 位置 ，渐变结束颜色 位置)
+2  background: linear-gradient(top，red 0% ，green 20%， gray 80%)
+
+
+19 css w3c统一验证网址
+
+检测已上线的代码：
+http://www.css stats.com/
+
+检测本地文件：
+http://validator.w3.org/unicorn/
+
+20 css压缩工具
+
+
+
+21 盒子垂直居中的方法
+
+22 css标准
+
+normallize.css
 
 
 
