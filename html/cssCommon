@@ -299,9 +299,23 @@ http://validator.w3.org/unicorn/
 21 盒子垂直居中的方法
 
 22 css标准
-
 normallize.css
 
+23 ico制作
+在header中添加
+<link rel="shortcut icon" href="favicon.ico">
+
+24 网站三大标签优化
+
+SEO
+<title> 具有不可替代性，谷歌要求35个中文，百度要求28个中文，一般是网站名加网站介绍，最先出现的词权重最高
+<meta name="description"  content="jakshkj">  不要超过120个汉字，英文逗号隔开
+<meta name="keywords"  content="jakshkj">  一般限制6到8个关键字,主要产品介绍
+
+
+
+25 去掉ul li前面的点
+list-style:none;
 
 
 
