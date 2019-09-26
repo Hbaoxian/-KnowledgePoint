@@ -56,3 +56,11 @@ li {
 .shortcut a:hover {
     color: #ff6d41;
 }
+
+.shortcut .fr .space {
+    height: 10px;
+    width: 1px;
+    background-color: #ccc;
+    margin-top: 10px;
+
+}

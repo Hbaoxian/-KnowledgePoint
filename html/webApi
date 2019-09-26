@@ -1,0 +1,33 @@
+获取网页上的元素
+
+1 根据id获取文档
+getElementById，每个id对象都是唯一的
+注意获取对象的时候，需要对象已经存在，否则获取null
+插入文本innerText
+    获取id对象子视图： 同样调用对应的方法获取对象getElement
+
+
+
+2 根据标签获取对象
+getElementsByTagName
+返回数组对象
+
+
+3 通过class获取对象元素
+getElementsByClassName
+
+4 通过对象属性name的值获取对象
+getElementsByName
+
+5  表单元素的属性
+value  用户大部分属性值获取
+type
+disable
+checked
+selected
+给对象复制
+setAttribute(key,value)
+通过setAttribute设置对象属性
+或者通过.语法设置
+object.value='sss'
+
